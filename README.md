@@ -6,7 +6,7 @@ Nesta atividade, você vai migrar a estrutura de dados que estava dentro do arqu
 
 - Nome:
 - Matricula:
-- Resuma da estrutura do db.json:
+- Resumo da estrutura do db.json:
 
 ## Print da página principal mostrando os cards (home):
 

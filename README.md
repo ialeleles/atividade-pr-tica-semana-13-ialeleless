@@ -23,7 +23,7 @@ Nesta atividade, você vai migrar a estrutura de dados que estava dentro do arqu
 }
 
 ## Print da página principal mostrando os cards (home):
-![alt text](<public/images/Captura de tela 2026-05-31 212343.png>)
+public/images/Captura de tela 2026-05-31 212343.png
 
 ## Print da página detalhes:
-![alt text](<public/images/Captura de tela 2026-05-31 212353.png>)
+public/images/Captura de tela 2026-05-31 212353.png

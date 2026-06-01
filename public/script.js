@@ -12,6 +12,9 @@ async function fetchItems() {
 }
 
 function createCard(item) {
+    // Detecta se o navegador já está dentro da pasta public para não duplicar na URL
+    const prefixoPasta = window.location.pathname.includes('/public/') ? "" : "public/";
+    
     return `
         <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center">
             <div class="card h-100 w-100">
@@ -23,7 +26,7 @@ function createCard(item) {
                         <p class="card-text text-light small mb-3">${item.descricaoCurta}</p>
                         <p class="text-secondary small">Dificuldade técnica: <strong>${item.dificuldade_num}/5</strong></p>
                     </div>
-                    <a href="detalhes.html?id=${item.id}" class="btn btn-outline-light btn-sm mt-2">Ver detalhes</a>
+                    <a href="${prefixoPasta}details.html?id=${item.id}" class="btn btn-outline-light btn-sm mt-2">Ver detalhes</a>
                 </div>
             </div>
         </div>
@@ -48,13 +51,15 @@ function renderCards(items) {
 
 function renderCarrossel(items) {
     const containerCarrossel = document.getElementById('carrossel-itens');
-    const containerIndicadores = document.getElementById('carrossel-indicadores');
+    const containerIndicadores = document.getElementById('carrossel-indicators');
 
     if (!containerCarrossel || !containerIndicadores) return;
 
     const itensDestaque = items.filter(m => m.destaque);
     let htmlCarrossel = "";
     let htmlIndicadores = "";
+    
+    const prefixoPasta = window.location.pathname.includes('/public/') ? "" : "public/";
     
     itensDestaque.forEach((item, index) => {
         const activeClass = index === 0 ? "active" : "";
@@ -66,7 +71,7 @@ function renderCarrossel(items) {
                     <div class="bg-dark bg-opacity-75 caixa-texto-slide">
                         <h2 class="fw-bold text-white text-uppercase mb-1">${item.nome}</h2>
                         <p class="text-light mb-3">${item.descricaoCurta}</p>
-                        <a href="detalhes.html?id=${item.id}" class="btn btn-light btn-sm fw-bold px-3">Ver detalhes</a>
+                        <a href="${prefixoPasta}details.html?id=${item.id}" class="btn btn-light btn-sm fw-bold px-3">Ver detalhes</a>
                     </div>
                 </div>
             </div>
